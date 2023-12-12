@@ -27,3 +27,9 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+
+gem "dartsass-rails", "~> 0.5.0"
+
+gem "simple_form", "~> 5.3"
+
+gem "tailwindcss-rails", "~> 2.0"
