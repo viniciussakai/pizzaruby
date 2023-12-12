@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3eac37c7-a2d4-4094-872f-53d9861c2ea3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/product.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/product.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/products/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/products/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/products/_product.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/products/_product.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/products/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/products/show.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +129,7 @@
       <workItem from="1702327303311" duration="683000" />
       <workItem from="1702327995205" duration="486000" />
       <workItem from="1702328520191" duration="18797000" />
-      <workItem from="1702397652849" duration="1061000" />
+      <workItem from="1702397652849" duration="2289000" />
     </task>
     <servers />
   </component>
