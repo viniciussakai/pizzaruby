@@ -1,27 +1,17 @@
-<div id="<%= dom_id product %>">
-  <p>
-    <strong>Name:</strong>
-    <%= product.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= product.description %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= product.category %>
-  </p>
-
-  <p>
-    <strong>Status:</strong>
-    <%= product.status %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= product.price %>
-  </p>
-
+<div class="group relative" id="<%= dom_id product %>">
+  <a href="<%= product_url product %>">
+    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+      <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+    </div>
+    <div class="mt-4 mb-4 flex justify-between">
+      <div>
+        <h3 class="text-sm text-gray-700">
+          <%= product.name %>
+        </h3>
+        <p class="mt-1 text-sm text-gray-500"> <%= product.category %></p>
+      </div>
+      <p class="text-sm font-medium text-gray-900">R$<%= product.price %></p>
+    </div>
+  </a>
+  <%= link_to "Adicionar ao carrinho", "cart", class: "flex w-full justify-center rounded-md bg-rose-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-rose-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600" %>
 </div>
