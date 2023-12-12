@@ -17,7 +17,7 @@
     <%= f.input :category %>
     <%= f.check_box :status, hint: "Esta ativo" %>
     <%= f.input :price, label: "Preço" %>
-
+    <%= f.input :image, as: :file, input_html: {} %>
 
     <div>
       <%= f.submit %>
