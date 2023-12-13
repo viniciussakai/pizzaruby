@@ -1,5 +1,5 @@
 class CartController < ApplicationController
-  before_action :initialize_cart, except: %i[show]
+  before_action :initialize_cart
 
   def show
   end
@@ -16,6 +16,7 @@ class CartController < ApplicationController
     else
       @cart.orderables.create(product_id: @product.id, quantity:)
     end
+
   end
 
   def remove

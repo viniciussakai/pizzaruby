@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  
+
   get 'cart/show'
   post 'cart/add'
   post 'cart/remove'
