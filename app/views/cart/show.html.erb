@@ -2,30 +2,6 @@
   <section class="mt-6">
 
     <h1 class="text-4xl font-bold mb-4">Carrinho de Compras</h1>
-    <ul role="list" class=" mb-2 divide-y divide-gray-200 border-b border-gray-200">
-      <% @cart.orderables.each do |orderable| %>
-        <%= render partial: "orderable", locals: {
-          orderable:
-        } %>
-      <% end %>
-    </ul>
-    <div class="fixed bottom-0 left-0 w-full  pt-6 pb-6 ">
-      <div class="mx-auto max-w-2xl ">
-        <div class="flex justify-between text-base font-medium text-gray-900"><p>Subtotal</p>
-          <div>
-            <div><%= @cart.total %></div>
-          </div>
-        </div>
-        <p class="mt-0.5 text-sm text-gray-500">Frete e impostos calculados na finalização da compra.</p>
-        <div class="mt-6 flex">
-          <button class=" flex-1 rounded-md border border-transparent bg-rose-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-rose-700">Finalizar
-            Compra
-          </button>
-        </div>
-        <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
-          <p><span>or</span><span> </span><a class="font-medium text-rose-600 hover:text-rose-500" href="/products">Continuar
-            a comprar<span aria-hidden="true"> →</span></a></p></div>
-      </div>
-    </div>
+    <%= render partial: "cart/cart", locals: { cart: @cart } %>
   </section>
 </main>

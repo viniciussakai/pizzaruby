@@ -1,4 +1,4 @@
-<li class="flex py-6 border-t border-gray-200">
+<li class="flex py-6 border-t border-gray-200" id="<%= dom_id orderable %>">
   <div class="h-24 w-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
     <%= image_tag(orderable.product.image, :class => "w-full h-full object-cover object-center") %>
   </div>
@@ -6,7 +6,7 @@
     <div>
       <div class="flex justify-between text-base font-medium text-gray-900">
         <h3><%= link_to orderable.product.name, product_url(orderable.product.id) %></h3>
-        <div class="ml-4"><%= orderable.subtotal %></div>
+        <div class="ml-4">R<%= number_to_currency orderable.subtotal %></div>
       </div>
       <p class="mt-1 text-sm text-gray-500"><%= orderable.product.category %></p></div>
     <div class="flex flex-1 items-end justify-between text-sm">
