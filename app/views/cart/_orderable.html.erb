@@ -10,7 +10,30 @@
       </div>
       <p class="mt-1 text-sm text-gray-500"><%= orderable.product.category %></p></div>
     <div class="flex flex-1 items-end justify-between text-sm">
-      <div class="text-gray-500">Qtd <span><%= orderable.quantity %></span></div>
+      <div class="flex w-24">
+        <div class="flex flex-row  w-full rounded-lg relative bg-transparent mt-1">
+          <%= form_with(url: cart_add_path) do |f| %>
+            <%= f.hidden_field :id, value: orderable.product.id %>
+            <%= f.hidden_field :quantity, value: orderable.quantity - 1 %>
+            <button class="bg-gray-200 text-gray-600 hover:text-gray-700 hover:bg-gray-300 h-full w-6 rounded-l cursor-pointer outline-none">
+              <span class="m-auto text-xs font-thin"><i class="fa-solid fa-minus"></i></span>
+            </button>
+          <% end %>
+
+          <input readonly value="<%= orderable.quantity %>" class="text-center block w-full outline-none border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-600 sm:text-sm sm:leading-6" name="quantity"/>
+
+          <%= form_with(url: cart_add_path) do |f| %>
+            <%= f.hidden_field :id, value: orderable.product.id %>
+            <%= f.hidden_field :quantity, value: orderable.quantity + 1 %>
+            <button class="bg-gray-200 text-gray-600 hover:text-gray-700 hover:bg-gray-300 h-full w-6 rounded-r cursor-pointer outline-none">
+              <span class="m-auto text-xs font-thin"><i class="fa-solid fa-plus"></i></span>
+            </button>
+          <% end %>
+        </div>
+
+      </div>
+
+
       <div class="flex">
         <%= form_with(url: cart_remove_path) do |f| %>
           <%= f.hidden_field :id, value: orderable.id %>

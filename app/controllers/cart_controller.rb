@@ -10,14 +10,18 @@ class CartController < ApplicationController
     current_orderable = @cart.orderables.find_by(product_id: @product.id)
 
     if current_orderable && quantity > 0
-      current_orderable.update(quantity:)
-    elsif quantity <= 0
+      current_orderable.update(quantity: quantity)
+    elsif current_orderable && quantity >= 0
       current_orderable.destroy
     else
       @cart.orderables.create(product_id: @product.id, quantity:)
     end
 
-    redirect_to controller: :cart, action: :show
+    if turbo_frame_request?
+      update_view_cart
+    else
+      redirect_to controller: :cart, action: :show
+    end
   end
 
   def remove
