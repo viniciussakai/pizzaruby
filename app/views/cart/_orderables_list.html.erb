@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "orderables" do %>
+  <% cart.orderables.each do |orderable| %>
+    <%= render partial: "orderable", locals: {
+      orderable:
+    } %>
+  <% end %>
+<% end %>

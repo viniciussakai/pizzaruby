@@ -1,0 +1,33 @@
+<%= turbo_frame_tag "cart" do %>
+  <ul role="list" style="max-height: 70vh" class="pb-24 overflow-y-auto mb-2 divide-y divide-gray-200 border-b border-gray-200">
+    <%= render partial: "orderables_list", locals: {
+      cart:
+    } %>
+  </ul>
+
+
+  <% if cart.count_items > 0 %>
+    <div class=" bg-white z-50 fixed bottom-0 left-0 w-full  pt-6 pb-6 ">
+      <div class="mx-auto max-w-2xl ">
+        <div class="flex justify-between text-base font-medium text-gray-900"><p>Subtotal</p>
+          <div>
+            <div>R<%= number_to_currency(cart.total) %></div>
+          </div>
+        </div>
+        <p class="mt-0.5 text-sm text-gray-500">Frete e impostos calculados na finalização da compra.</p>
+        <div class="mt-6 flex">
+          <button class=" flex-1 rounded-md border border-transparent bg-rose-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-rose-700">Finalizar
+            Compra
+          </button>
+        </div>
+        <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
+          <p>
+            <span>ou</span><span> </span>
+            <%= link_to "Continue a comprar", products_url, class: "font-medium text-rose-600 hover:text-rose-500", data: { turbo_frame: "_top" } %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <%= render partial: "empty_cart" %>
+  <% end %>
+<% end %>
